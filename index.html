@@ -30,14 +30,23 @@
                 <div class="container nav-header-container">
                     <h1 class="title">Restaurant</h1>
                     <nav class="main-nav">
-                        <ul class="nav">
-                            <li class="nav-item">about</li>
-                            <li class="nav-item">events</li>
-                            <li class="nav-item">menu</li>
-                            <li class="nav-item">gallery</li>
-                            <li class="nav-item">contacts</li>
-                            <li class="nav-item">blog</li>
+                        <ul class="nav d-none d-md-block">
+                            <li class="nav-item btn">about</li>
+                            <li class="nav-item btn">events</li>
+                            <li class="nav-item btn">menu</li>
+                            <li class="nav-item btn">gallery</li>
+                            <li class="nav-item btn">contacts</li>
+                            <li class="nav-item btn">blog</li>
                         </ul>
+                        <select class="d-block d-md-none" id="main-nav-select" name="main-nav">
+                            <option value="">Select an option</option>
+                            <option value="about">about</option>
+                            <option value="events">events</option>
+                            <option value="menu">menu</option>
+                            <option value="gallery">gallery</option>
+                            <option value="contacts">contacts</option>
+                            <option value="blog">blog</option>
+                        </select>
                     </nav>
                 </div>
             </div>
@@ -142,100 +151,133 @@
                     <figure>
                         <img class="img-fluid" src="media/24-hours.png" alt="placeholder">
                     </figure>
-                    <h2>Location Finder</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>Location Finder</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
                 <div class="content-box">
                     <figure>
                         <img class="img-fluid" src="media/hb-fries.png" alt="placeholder">
                     </figure>
-                    <h2>food quality &amp; menu</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>food quality &amp; menu</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
                 <div class="content-box">
                     <figure>
                         <img class="img-fluid" src="media/chef.png" alt="placeholder">
                     </figure>
-                    <h2>employment</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>employment</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
                 <div class="content-box">
                     <figure>
                         <img class="img-fluid" src="media/veg.png" alt="placeholder">
                     </figure>
-                    <h2>our story</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>our story</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
                 <div class="content-box">
                     <figure>
                         <img class="img-fluid" src="media/lime.png" alt="placeholder">
                     </figure>
-                    <h2>promotions</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>promotions</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
                 <div class="content-box">
                     <figure>
                         <img class="img-fluid" src="media/wraps.png" alt="placeholder">
                     </figure>
-                    <h2>fresh ideas</h2>
-                    Dolor ad eligendi quaerat deserunt
+                    <div class="content-box-text">
+                        <h2>fresh ideas</h2>
+                        <p>
+                            Dolor ad eligendi quaerat deserunt
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="container reservations">
-                    <div class="offer-box">
-                        <figure>
-                            <img src="media/icons/coffee.svg" alt="offer icon">
-                        </figure>
-                        <div class="offer-header">
-                            <span>offer one</span>
-                            <h2>
-                                Consectetur quis laboriosam.
-                            </h2>
+            <div class="container-fluid reservations">
+                <div class="container">
+                    <h2>Reservations and orders may be placed anytime</h2>
+                    <div class="offers">
+                        <div class="offer-box">
+                            <figure>
+                                <img src="media/icons/coffee.svg" alt="offer icon">
+                            </figure>
+                            <div class="offer">
+                                <div class="offer-header">
+                                    <span>offer one</span>
+                                    <h2>
+                                        Consectetur quis laboriosam.
+                                    </h2>
+                                </div>
+                                <p>
+                                    Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
+                                    Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
+                                </p>
+                                <a href="#">
+                                    » Click here
+                                </a>
+                            </div>
                         </div>
-                        <p>
-                            Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
-                            Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
-                        </p>
-                        <a href="#">
-                            » Click here
-                        </a>
-                    </div>
-                    <div class="offer-box">
-                        <figure>
-                            <img src="media/icons/spoon-knife.svg" alt="offer icon">
-                        </figure>
-                        <div class="offer-header">
-                            <span>offer two</span>
-                            <h2>
-                                Adipisicing incidunt perspiciatis?
-                            </h2>
+                        <div class="offer-box">
+                            <figure>
+                                <img src="media/icons/spoon-knife.svg" alt="offer icon">
+                            </figure>
+                            <div class="offer">
+                                <div class="offer-header">
+                                    <span>offer two</span>
+                                    <h2>
+                                        Adipisicing incidunt perspiciatis?
+                                    </h2>
+                                </div>
+                                <p>
+                                    Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
+                                    Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
+                                </p>
+                                <a href="#">
+                                    » Click here
+                                </a>
+                            </div>
                         </div>
-                        <p>
-                            Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
-                            Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
-                        </p>
-                        <a href="#">
-                            » Click here
-                        </a>
-                    </div>
-                    <div class="offer-box">
-                        <figure>
-                            <img src="media/icons/heart.svg" alt="offer icon">
-                        </figure>
-                        <div class="offer-header">
-                            <span>offer three</span>
-                            <h2>
-                                Elit necessitatibus porro?
-                            </h2>
+                        <div class="offer-box">
+                            <figure>
+                                <img src="media/icons/heart.svg" alt="offer icon">
+                            </figure>
+                            <div class="offer">
+                                <div class="offer-header">
+                                    <span>offer three</span>
+                                    <h2>
+                                        Elit necessitatibus porro?
+                                    </h2>
+                                </div>
+                                <p>
+                                    Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
+                                    Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
+                                </p>
+                                <a href="#">
+                                    » Click here
+                                </a>
+                            </div>
                         </div>
-                        <p>
-                            Adipisicing incidunt saepe aut fugit ipsam. Pariatur temporibus iusto nisi omnis necessitatibus
-                            Eligendi eligendi sit repellendus doloremque corporis. Quasi eos
-                        </p>
-                        <a href="#">
-                            » Click here
-                        </a>
                     </div>
                 </div>
             </div>
@@ -243,11 +285,11 @@
         <footer class="footer"> <!-- begin footer -->
             <div class="container-fluid top-footer">
                 <div class="container">
-                    <div><span>client logo</span></div>
-                    <div><span>client logo</span></div>
-                    <div><span>client logo</span></div>
-                    <div><span>client logo</span></div>
-                    <div><span>client logo</span></div>
+                    <div class="d-none d-md-block">client logo</div>
+                    <div class="d-none d-md-block">client logo</div>
+                    <div class="d-none d-md-block">client logo</div>
+                    <div class="d-none d-md-block">client logo</div>
+                    <div class="d-none d-md-block">client logo</div>
                 </div>
             </div>
             <div class="container-fluid middle-footer">
@@ -296,8 +338,10 @@
                 </div>
             </div>
             <div class="container-fluid bottom-footer">
-                <h2>Restaurant</h2>
-                <p>Restaurant &copy; 2018 Privacy Policy</p>
+                <div class="container">
+                    <h2>Restaurant</h2>
+                    <p>Restaurant &copy; 2018 Privacy Policy</p>
+                </div>
             </div>
         </footer>
     </body>
