@@ -330,17 +330,26 @@ h3 {
     border: none;
 }
 
+@media (max-width: 576px) {
+    .top-footer > .container > div:nth-child(2) {
+        border: none;
+    }
+}
+
 .middle-footer {
     background: var(--footerBg2);
     color: var(--footer);
 }
 
 .middle-footer > .container {
-    /* display: grid; */
-    /* grid-template-columns: repeat(4, 1fr); */
-    /* gap: 2rem; */
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+    .middle-footer > .container {
+        flex-direction: column;
+    }
 }
 
 .middle-footer > .container > div {
@@ -391,4 +400,10 @@ h3 {
 
 .bottom-footer p {
     margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+    .bottom-footer {
+        text-align: center;
+    }
 }
