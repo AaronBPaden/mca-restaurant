@@ -1,0 +1,73 @@
+/* global section */
+
+:root {
+    --headerBg: #de4639;
+    --headerBg2: #f86657;
+    --headerBg3: #fff8ce;
+    --infobox: rgba(255, 248, 206, 0.85);
+    --header1: white;
+    --header2: #782c1c;
+}
+
+.container {
+    padding: 1rem 0;
+}
+
+/* header section */
+
+/* main section */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container > .container {
+    padding: 0;
+}
+
+.carousel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 480px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.carousel-bg img {
+    margin: -20px;
+    filter: grayscale(40%) blur(5px);
+    transform: scale(2);
+}
+
+.carousel-item {
+    position: relative;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 480px;
+}
+
+.carousel-text-container {
+    position: absolute;
+    width: 100%;
+    height: 480px;
+    z-index: 2;
+}
+
+.carousel-infobox {
+    position: absolute;
+    padding: 1rem;
+    width: 30%;
+    background: var(--infobox);
+}
+
+.carousel-infobox {
+}
+
+
+/* footer section */
