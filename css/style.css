@@ -88,6 +88,10 @@ h3 {
     color: var(--text1);
 }
 
+.main-nav .nav-item {
+    display: inline;
+}
+
 .main-nav select {
     margin: 0.5rem;
     padding: 0.5rem;
