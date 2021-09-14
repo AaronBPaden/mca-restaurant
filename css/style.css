@@ -74,6 +74,7 @@ h3 {
 }
 
 .nav-header-container .btn {
+    font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
     color: var(--headerBg3);
