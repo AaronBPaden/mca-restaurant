@@ -116,6 +116,8 @@ h3 {
 }
 
 .search-header p {
+    font-family: "Work Sans", "sans-serif";
+    font-size: 1.5rem;
     color: var(--text2);
 }
 
@@ -206,9 +208,18 @@ h3 {
 
 .carousel-infobox {
     position: absolute;
+    bottom: 0;
+    left: 0;
     padding: 1rem;
     width: 30%;
     background: var(--infobox);
+    box-shadow: 0px 5px 10px 0px black;
+}
+
+.carousel-infobox p {
+    font-family: "Work Sans", "sans-serif";
+    font-size: 0.8rem;
+    color: var(--text2);
 }
 
 .main-content {
@@ -394,6 +405,10 @@ h3 {
     margin-top: 1rem;
     padding: 0;
     color: var(--footer2);
+}
+
+.about p:nth-child(2) {
+    font-weight: bold;
 }
 
 .blog-entry:nth-child(2) {
