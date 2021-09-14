@@ -109,10 +109,19 @@ h3 {
     padding: 2rem 0;
 }
 
+@media (min-width: 768px) {
+    .search-header > p {
+        width: 30%;
+    }
+}
+
 @media (max-width: 576px) {
     .search-header,
     .nav-header-container {
         flex-direction: column;
+    }
+    .search-header p {
+        text-align: center;
     }
 }
 
