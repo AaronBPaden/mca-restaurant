@@ -280,7 +280,8 @@ h3 {
     flex: 1;
 }
 
-.content-box h2 {
+.content-box h2,
+.content-box h3 {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -461,4 +462,44 @@ h3 {
     .bottom-footer {
         text-align: center;
     }
+}
+
+/* menu section */
+
+.menu-page > h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.menu-card {
+    position: relative;
+    width: 400px;
+    cursor: pointer;
+}
+
+.menu-card > .remove-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-card.active {
+    background: blue;
+}
+
+.menu-card.free-side {
+    background: purple;
+}
+
+.checkout-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
 }
