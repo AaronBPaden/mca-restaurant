@@ -138,7 +138,7 @@ class Menu {
         let subtotal = Array.from(document.querySelectorAll('.item-subtotal'))
             .map(e => parseFloat(e.innerText))
             .reduce((total, amount) => total+amount);
-        let tax = (subtotal*0.7);
+        let tax = (subtotal*0.07);
         document.getElementById('subtotalSubtotal').innerText = subtotal.toFixed(2);
         document.getElementById('subtotalTax').innerText = tax.toFixed(2);
         document.getElementById('completedTotal').innerText = (subtotal + tax).toFixed(2);
