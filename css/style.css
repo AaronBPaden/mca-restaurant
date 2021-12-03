@@ -85,7 +85,7 @@ h3 {
     color: black;
 }
 
-.title {
+.title a {
     color: var(--text1);
 }
 
