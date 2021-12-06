@@ -490,14 +490,6 @@ h3 {
     left: 0;
 }
 
-.menu-card.active {
-    background: blue;
-}
-
-.menu-card.free-side {
-    background: purple;
-}
-
 .checkout-button {
     position: fixed;
     bottom: 2rem;
