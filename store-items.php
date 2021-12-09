@@ -50,7 +50,7 @@ $sides = get_entry_list("sides");
 //         menu.append(card);
 function build_cards($list, $type) {
 	foreach($list as $e) {
-		print("<div class=\"content-box menu-card\" data-id=\"{$e['id']}\" data-type=\"{$type}\" data-quantity=\"0\">");
+		print("<div class=\"content-box menu-card\" data-id=\"{$e['id']}\" data-type=\"{$type}\" data-img=\"{$e['img']}\" data-price=\"{$e['price']}\" data-quantity=\"0\">");
 		print("<img class=\"img-fluid\" src=\"{$e['img']}\" alt=\"{$e['name']}\">");
 		print("<button class=\"remove-button btn btn-dark d-none\" data-id=\"{$e['id']}\"data-type=\"{$type}\">−</button>");
 		print('<div class="content-box-text">');
