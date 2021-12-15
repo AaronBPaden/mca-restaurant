@@ -5,16 +5,39 @@
  * $type should be either "entrees" or "sides".
  */
 function get_entry_list($type) {
+	$cart = [];
+
+	if (isset($_COOKIE["mca-restaurant-cart"])) {
+		$cart = json_decode($_COOKIE["mca-restaurant-cart"], true);
+	}
+
 	if ($type != "entrees" && $type != "sides") {
 		print("<script>console.log('invalid type ${type} in get_entry_list');</script>");
 		return;
 	}
+
 	$db = new SQLite3('db.sqlite3');
 	$arr = [];
 	$query = $db->query("select * from ${type}");
+
 	for ($i = 0; $i < $query->numColumns(); $i++) {
-		$arr[] = $query->fetchArray(SQLITE3_ASSOC);
+		$arr[$i] = $query->fetchArray(SQLITE3_ASSOC);
+
+		/* Search the cart in the cookie for an id & type match for keeping track of quantity */
+		$cart_searched = array_reduce($cart, function($c, $e) use ($arr, $i, $type) {
+			if (((int)$e['id'] === $arr[$i]['id']) && $e['type'] . "s" === $type) {
+				assert($c === null); // duplicate check
+				return $e;
+			}
+		});
+
+		if ($cart_searched !== null) {
+			$arr[$i]['qty'] = $cart_searched['qty'];
+		} else {
+			$arr[$i]['qty'] = 0;
+		}
 	}
+
 	$db->close();
 	return $arr;
 }
@@ -26,37 +49,15 @@ function get_entry_list($type) {
 $entrees = get_entry_list("entrees");
 $sides = get_entry_list("sides");
 
-
-//     populateCard(item, type) {
-//         let menu = type === 'entree' ? document.getElementById('entreeMenu') : document.getElementById('sideMenu');
-//         let card = document.createElement('div');
-//         card.className = 'content-box menu-card';
-//         card.dataset.type = type 
-//         card.dataset.id = item.id;
-//         card.dataset.quantity = 0;
-//         card.insertAdjacentHTML('beforeend', `
-//             <img class="img-fluid" src="${item.img}" alt="${item.name}">
-//             <button class="remove-button btn btn-dark d-none" data-id="${item.id}" data-type="${type}">−</button>
-//             <div class="content-box-text">
-//                 <h3>${item.name}</h3>
-//                 <p>
-//                     ${item.desc}
-//                 </p>
-//                 <p class="card-price">
-//                     <span class="item-quantity"></span> — $${item.price}
-//                 </p>
-//             </div>`);
-//         card.addEventListener('click', this.handleClick.bind(this));
-//         menu.append(card);
 function build_cards($list, $type) {
 	foreach($list as $e) {
-		print("<div class=\"content-box menu-card\" data-id=\"{$e['id']}\" data-type=\"{$type}\" data-img=\"{$e['img']}\" data-price=\"{$e['price']}\" data-quantity=\"0\">");
+		print("<div class=\"content-box menu-card\" data-id=\"{$e['id']}\" data-type=\"{$type}\" data-img=\"{$e['img']}\" data-price=\"{$e['price']}\" data-qty=\"{$e['qty']}\">");
 		print("<img class=\"img-fluid\" src=\"{$e['img']}\" alt=\"{$e['name']}\">");
 		print("<button class=\"remove-button btn btn-dark d-none\" data-id=\"{$e['id']}\"data-type=\"{$type}\">−</button>");
 		print('<div class="content-box-text">');
 		print("<h3>{$e['name']}</h3>");
 		print("<p>{$e['desc']}</p>");
-		print("<p class=\"card-price\"><span class=\"item-quantity\"></span> — \${$e['price']}</p>");
+		print("<p class=\"card-price\"><span class=\"item-qty\">{$e['qty']}</span> — \${$e['price']}</p>");
 		print('</div>');
 		print('</div>');
 	}
