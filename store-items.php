@@ -27,8 +27,9 @@ function get_entry_list($type) {
 		$cart_searched = array_reduce($cart, function($c, $e) use ($arr, $i, $type) {
 			if (((int)$e['id'] === $arr[$i]['id']) && $e['type'] . "s" === $type) {
 				assert($c === null); // duplicate check
-				return $e;
+				$c = $e;
 			}
+			return $c;
 		});
 
 		if ($cart_searched !== null) {
