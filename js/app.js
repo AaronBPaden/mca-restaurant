@@ -50,6 +50,10 @@ const menuPage = () => {
         });
     }
     cards.forEach((el) => {
+        /*
+         * When clicking on a card, we send the card's data to add-item-to-cart.php.
+         * An updated cart is returned and we refresh the cards to sync with the cart.
+         */
         el.addEventListener("click", async function(ev) {
             let body = {
                 "id": el.dataset.id,
