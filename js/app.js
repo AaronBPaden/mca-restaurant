@@ -1,6 +1,12 @@
 "use strict";
 
-const fetchData = async function(url, body) {
+/*
+ * Send an item to the cart.
+ *
+ * Returns the updated cart.
+ */
+const addItemToCart = async function(body) {
+    let url = 'add-item-to-cart.php';
     let form = new FormData();
     for(const key in body) {
         form.append(key, body[key]);
@@ -26,10 +32,15 @@ const menuPage = () => {
         e.dataset.qty = n;
         e.querySelector(".item-qty").innerText = n;
     }
+    /*
+     * Based on the provided cart, refresh the quantity for all menu items.
+     */
     const refreshCards = (cart) => {
         cards.forEach((e) => {
+            // Search cart to see if an ID matches the card ID.
             let i = Array.from(cart).findIndex((el) => el.id === e.dataset.id && el.type === e.dataset.type);
             if (i === -1) {
+                // There was no match, so we set the quantity to zero.
                 setQuantity(e, 0);
                 return;
             };
@@ -44,7 +55,7 @@ const menuPage = () => {
                 "type": el.dataset.type,
             };
             console.log("body", body);
-            let cart = await fetchData('add-item-to-cart.php', body);
+            let cart = await addItemToCart(body);
             if (!cart) return;
             console.log("response", cart);
             refreshCards(cart);
