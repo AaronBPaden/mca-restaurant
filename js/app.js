@@ -27,9 +27,12 @@ const addItemToCart = async function(body) {
 
 const menuPage = () => {
     let cards = document.querySelectorAll('.menu-card');
-    const setQuantity = (e, n) => {
-        e.dataset.qty = n;
-        e.querySelector(".item-qty").innerText = n;
+    /*
+     * Set a menu card's quantity.
+     */
+    const setQuantity = (el, quantity) => {
+        el.dataset.qty = quantity;
+        el.querySelector(".item-qty").innerText = quantity;
     }
     /*
      * Based on the provided cart, refresh the quantity for all menu items.
