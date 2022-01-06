@@ -5,7 +5,6 @@ const fetchData = async function(url, body) {
     for(const key in body) {
         form.append(key, body[key]);
     }
-    let str;
     const options = {
         method: 'POST',
         body: form,
