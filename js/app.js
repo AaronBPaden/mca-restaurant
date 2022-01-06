@@ -18,7 +18,6 @@ const addItemToCart = async function(body) {
     try {
         let res = await fetch(url, options);
         let text = await res.text();
-        console.log("text", text);
         return JSON.parse(text).cart;
     } catch (error) {
         console.log(error);
@@ -54,10 +53,8 @@ const menuPage = () => {
                 "qty": el.dataset.qty,
                 "type": el.dataset.type,
             };
-            console.log("body", body);
             let cart = await addItemToCart(body);
             if (!cart) return;
-            console.log("response", cart);
             refreshCards(cart);
         });
     });
