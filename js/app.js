@@ -145,12 +145,18 @@ class Menu {
         document.getElementById('checkoutPage').classList.remove('d-none');
     }
 
+    /*
+     * Build the checkout page.
+     */
     onCheckout(event) {
+        // Filter for ordered entrees and sides with a quantity greater than zero.
         let orderedEntrees = Array.from(document.querySelectorAll('#entreeMenu > .menu-card'))
             .filter(e => parseInt(e.querySelector('.item-quantity').innerText) > 0);
         let orderedSides = Array.from(document.querySelectorAll('#sideMenu > .menu-card'))
             .filter(e => parseInt(e.querySelector('.item-quantity').innerText) > 0);
+
         document.getElementById('menuPage').classList.add('d-none');
+
         if (orderedEntrees.length > 0) {
             document.getElementById('checkoutEntrees').classList.remove('d-none');
             let list = document.getElementById('entreesList');
@@ -165,6 +171,7 @@ class Menu {
                 this.populateCheckoutLists(list, e, db.sides);
             });
         }
+
         this.populateTotal();
     }
 
@@ -229,7 +236,6 @@ class Menu {
         card.addEventListener('click', this.handleClick.bind(this));
         menu.append(card);
     }
-
 }
 
 const initPages = () => {
